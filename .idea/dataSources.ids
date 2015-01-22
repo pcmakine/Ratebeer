@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source source="LOCAL" name="Rails ratebeer: development" uuid="d838c9c1-1def-4ada-ba02-5d79458d98e3">
+  <data-source name="Rails ratebeer: development" uuid="d838c9c1-1def-4ada-ba02-5d79458d98e3">
     <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
-  <data-source source="LOCAL" name="Rails ratebeer: test" uuid="bf0a8c98-eab4-4381-88a9-a08c4b87d6d9">
+  <data-source name="Rails ratebeer: test" uuid="bf0a8c98-eab4-4381-88a9-a08c4b87d6d9">
     <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
 </component>

@@ -56,3 +56,12 @@ end
 
 # Javascript
 gem 'therubyracer', platforms: :ruby
+
+group :development, :test do
+  gem 'byebug'
+  gem 'web-console', '~>2.0'
+end
+
+group :development, :test do
+  gem "better_errors"
+end
