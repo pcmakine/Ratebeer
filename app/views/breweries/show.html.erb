@@ -20,5 +20,9 @@
     <% end %>
 </p>
 
+<% if(!@brewery.ratings.empty?) %>
+    <p>Has <%= @brewery.ratings.length.to_s(10) << " rating".pluralize(@brewery.ratings.length) %>, average: <%= @brewery.average_rating %> </p>
+<%	 end %>
+
 <%= link_to 'Edit', edit_brewery_path(@brewery) %> |
 <%= link_to 'Back', breweries_path %>

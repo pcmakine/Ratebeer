@@ -16,8 +16,7 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= select_tag "style", options_for_select([["value 1", "1"], ["value 2", "2"], "3", "4"],
-    ["1", "3"]) %>
+    <%= f.select :style, options_for_select(@styles) %>
   </div>
   <div class="field">
 
