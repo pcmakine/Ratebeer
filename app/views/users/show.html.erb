@@ -20,8 +20,23 @@
 <% end %>
 </p>
 
+<p>
+  <% unless @user.beer_clubs.empty? %>
+      is a member of <%= @user.beer_clubs.length.to_s(10) << " club".pluralize(@user.beer_clubs.length)%>
+    <h3>Clubs</h3>
+    <ul>
+      <% @user.beer_clubs.each do |club| %>
+          <li> <%= club %></li>
+      <% end %>
+    </ul>
+<% end %>
+</p>
 
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+<% if (current_user == @user) %>
+|
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
