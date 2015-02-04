@@ -27,4 +27,7 @@
 <p><%=link_to "List of breweries", breweries_path %></p>
 <br>
 
+
+<% if not current_user.nil? %>
 <%= link_to 'New Beer', new_beer_path %>
+<% end %>
