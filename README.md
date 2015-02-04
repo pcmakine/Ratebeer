@@ -1,5 +1,5 @@
 Travis:
-https://travis-ci.org/pcmakine/ratebeer
+https://travis-ci.org/pcmakine/Ratebeer
 
 Heroku:
 http://wadror-pcmakine.herokuapp.com/breweries
