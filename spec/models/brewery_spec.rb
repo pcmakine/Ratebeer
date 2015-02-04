@@ -6,7 +6,7 @@ describe "when initialized with name Schlenkerla and year 1674" do
   BeerClub
   BeerClubsController
   MembershipsController
-  
+
   subject {Brewery.create name:"Schlenkerla", year:1674}
 
     its(:name) {should eq("Schlenkerla")}
