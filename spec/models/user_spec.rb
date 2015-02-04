@@ -71,4 +71,66 @@ end
     end
   end
 
+  describe "Favorite style" do
+    let(:user){ FactoryGirl.create(:user) }
+
+    it "has method for determining the favorite style" do
+      expect(user).to respond_to(:favorite_style)
+    end
+
+    it "without ratings does not have a favorite style" do
+      expect(user.favorite_style).to eq(nil)
+    end
+
+    it "is the style of the only rated beer if only one rating" do
+      beer = FactoryGirl.create(:beer, style:"IPA")
+      FactoryGirl.create(:rating, score:15, beer:beer, user:user)
+      expect(user.favorite_style).to eq("IPA")
+
+    end
+
+    it "is the style with the highest average rating" do
+      createBeersAndRatings
+      expect(user.favorite_style).to eq("Porter")
+    end
+
+  end
+
+describe "Favorite brewery" do
+  let(:user){ FactoryGirl.create(:user) }
+
+  it "has method for determining the favorite brewery" do
+    expect(user).to respond_to(:favorite_brewery)
+  end
+
+  it "without ratings does not have a favorite brewery" do
+    expect(user.favorite_brewery).to eq(nil)
+  end
+
+  it "is the style of the only rated beer if only one rating" do
+    beer = FactoryGirl.create(:beer, style:"IPA", brewery:FactoryGirl.create(:brewery, name:"BrewDog"))
+    FactoryGirl.create(:rating, score:15, beer:beer, user:user)
+    expect(user.favorite_brewery).to eq("BrewDog")
+
+  end
+
+  it "is the style with the highest average rating" do
+    createBeersAndRatings
+    expect(user.favorite_brewery).to eq("Malmgard")
+  end
+
+end
+
+end
+
+def createBeersAndRatings
+  beer1 = FactoryGirl.create(:beer, style:"Porter", brewery:FactoryGirl.create(:brewery, name:"Koff"))
+  beer2 = FactoryGirl.create(:beer, style:"Porter", brewery:FactoryGirl.create(:brewery, name:"Malmgard"))
+  beer3= FactoryGirl.create(:beer, style: "Weizen", brewery:FactoryGirl.create(:brewery, name:"Koff"))
+
+  FactoryGirl.create(:rating, score:15, beer:beer1, user:user)
+  FactoryGirl.create(:rating, score:30, beer:beer1, user:user)
+  FactoryGirl.create(:rating, score:25, beer:beer2, user:user)
+  FactoryGirl.create(:rating, score:31, beer:beer3, user:user)
+  FactoryGirl.create(:rating, score:1, beer:beer3, user:user)
 end

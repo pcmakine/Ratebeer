@@ -32,4 +32,6 @@ describe "Breweries page" do
       expect(page).to have_content "Established in 1897"
     end
   end
+
+
 end

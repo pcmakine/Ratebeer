@@ -19,8 +19,68 @@ class User < ActiveRecord::Base
     ratings.order(score: :desc).limit(1).first.beer
   end
 
+  def favorite_style
+    return nil if ratings.empty?
+    getFavoriteStyle
+  end
+
+  def favorite_brewery
+    return nil if ratings.empty?
+    getFavoriteBrewery
+  end
+
   def to_s
     username
   end
+
+  private
+
+  def getFavoriteStyle()
+    styles = Beer.all.group(:style).pluck("style")
+    avgmap = {}
+    styles.each{|s|
+      avgmap[s] = getStylesAvg s
+    }
+    avgmap.sort_by{ |name, score| score}.last.first
+  end
+
+  def getStylesAvg(style)
+    beersThisStyle = beers.where(style:style)
+    avg = 0
+    beersThisStyle.each{|b|
+      stylesratings = b.ratings.where(user_id:id)
+      if(!stylesratings.empty?)
+      avg += stylesratings.average(:score)
+      end
+    }
+    avg
+  end
+
+  def getFavoriteBrewery()
+    breweries = Brewery.all
+    avgmap = {}
+    breweries.each{|b|
+      avg = getBreweryAvg b
+      avgmap[b] = avg
+    }
+    favorite = avgmap.sort_by{ |brewery, score| score}.last.first
+    unless favorite.nil?
+      return favorite.name
+    end
+  end
+
+  def getBreweryAvg(brewery)
+    brewerysBeers = brewery.beers
+    avg = 0
+    brewerysBeers.each{|b|
+      beersratings = b.ratings.where(user_id:id)
+      if(!beersratings.empty?)
+      avg += beersratings.average(:score)
+      end
+    }
+    avg
+  end
+
+
 
 end

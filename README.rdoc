@@ -1,2 +1,0 @@
-== README
-Heroku instanssi: wadror-pcmakine.herokuapp.com/breweries

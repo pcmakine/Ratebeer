@@ -5,8 +5,17 @@
 </p>
 
 <p>
+
 <% unless @user.ratings.empty? %>
     has made <%= @user.ratings.length.to_s(10) << " rating".pluralize(@user.ratings.length) %>. Average <%= @user.average_rating %>
+    <br>
+      <% unless @user.favorite_style.nil?%>
+          Favorite style: <%= @user.favorite_style %> <br>
+      <% end %>
+      <br>
+      <% unless @user.favorite_brewery.nil?%>
+          Favorite brewery: <%= @user.favorite_brewery %><br>
+      <% end %>
     <h3>Ratings</h3>
     <ul>
       <% @user.ratings.each do |rating| %>
