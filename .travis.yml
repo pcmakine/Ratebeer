@@ -1,10 +1,16 @@
 language: ruby
-
 rvm:
 - 2.2.0
-
 script:
 - bundle exec rake db:migrate --trace
 - RAILS_ENV=test bundle exec rake db:migrate --trace
 - bundle exec rake db:test:prepare
 - bundle exec rspec -fd spec/
+deploy:
+  provider: heroku
+  api_key:
+    secure: RgkB0DQ7899Gu30s++ZpGA0eFFQWp9PZt9PsMJDudGNt2zG0sd4jbqZ55WJeS67idq439obGTSIT8N7BXqeMbnXdpVYlqIN2Pz0lxBMTMCwZBt0sJ0gPctSPQamSzDpGx2ty/YzLPnx1BG1vFUZqdlSta/JpSl+VlRBECgDDOj0=
+  run: "rake db:migrate"
+  app: wadror-pcmakine
+  on:
+    repo: pcmakine/Ratebeer
