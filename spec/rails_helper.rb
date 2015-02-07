@@ -67,9 +67,17 @@ def create_beer_with_rating(score, user)
 end
 
 def create_beers_with_ratings(*scores, user)
-scores.each do |score|
-  create_beer_with_rating(score, user)
+  scores.each do |score|
+    create_beer_with_rating(score, user)
+  end
 end
+
+def create_breweries(names)
+  year = 1896
+  names.each do |brewery_name|
+    FactoryGirl.create(:brewery, name:brewery_name, year: year += 1)
+
+  end
 end
 
 

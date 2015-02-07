@@ -33,4 +33,47 @@ describe "User" do
 
     end
   end
+
+  describe "favorite brewery and style" do
+    before :each do
+      sign_in(username:"Pekka", password:"Foobar1")
+      click_on 'Pekka'
+      @breweries =  ["Koff", "Karjala"]
+      create_breweries(@breweries)
+    end
+
+    let!(:pekka) {User.find 1}
+    let!(:koff) {Brewery.find 1}
+    let!(:karjala) {Brewery.find 2}
+    let!(:beer1) {FactoryGirl.create :beer, style:"Lager", name:"iso 3", brewery:koff}
+    let!(:beer2) {FactoryGirl.create :beer, style:"Weizen", name:"Karhu", brewery:karjala}
+
+    it "not shown if no ratings" do
+
+      expect(page).to have_content 'Pekka'
+      expect(page).to_not have_content 'Favorite brewery'
+      expect(page).to_not have_content 'Favorite style'
+    end
+
+    describe "but when ratings have been made" do
+      before :each do
+        pekka.ratings << FactoryGirl.create(:rating, score:10, beer:beer1, user:pekka)
+        pekka.ratings << FactoryGirl.create(:rating, score:50, beer:beer1, user:pekka)
+        pekka.ratings << FactoryGirl.create(:rating, score:35, beer:beer2, user:pekka)
+        pekka.ratings << FactoryGirl.create(:rating, score:39, beer:beer2, user:pekka)
+
+      end
+      it "correct brewery is shown" do
+        click_on 'Pekka'
+        expect(page).to have_content 'Pekka'
+        expect(page).to have_content 'Favorite brewery: Karjala'
+      end
+
+      it "and correct style is shown" do
+        click_on 'Pekka'
+        expect(page).to have_content 'Pekka'
+        expect(page).to have_content 'Favorite style: Weizen'
+      end
+    end
+  end
 end
