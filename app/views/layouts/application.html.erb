@@ -13,6 +13,7 @@
   <%= link_to 'ratings', ratings_path %>
   <%= link_to 'clubs', beer_clubs_path %>
   <%= link_to 'users', users_path%>
+  <%= link_to 'places search', places_path%>
    |
   <% if not current_user.nil? %>
       <%= link_to current_user.username, user_path(current_user)%>

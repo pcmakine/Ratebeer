@@ -78,4 +78,7 @@ group :test do
   gem 'launchy'
   gem 'simplecov', require: false
   gem 'rspec-its'
+  gem 'webmock'
 end
+
+gem 'httparty'
