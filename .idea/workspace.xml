@@ -28,7 +28,7 @@
       <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="0" selection-start="107" selection-end="107" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1305">
+            <state line="6" column="0" selection-start="107" selection-end="107" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="1305">
               <folding />
             </state>
           </provider>
@@ -37,9 +37,8 @@
       <file leaf-file-name="places_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/places_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="3" selection-start="277" selection-end="277" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+            <state line="14" column="3" selection-start="277" selection-end="277" vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="300">
               <folding>
-                <marker date="1423913224204" expanded="true" signature="22:277" placeholder=" ... end" />
                 <marker date="1423913224204" expanded="true" signature="58:65" placeholder=" ... end" />
                 <marker date="1423913224204" expanded="true" signature="79:273" placeholder=" ... end" />
               </folding>
@@ -50,9 +49,8 @@
       <file leaf-file-name="place.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/place.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="3" selection-start="291" selection-end="291" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
+            <state line="10" column="3" selection-start="291" selection-end="291" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="240">
               <folding>
-                <marker date="1423911938236" expanded="true" signature="11:291" placeholder=" ... end" />
                 <marker date="1423911938236" expanded="true" signature="212:286" placeholder=" ... end" />
               </folding>
             </state>
@@ -62,7 +60,7 @@
       <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/places/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="2" selection-start="2" selection-end="2" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="465">
+            <state line="0" column="2" selection-start="2" selection-end="2" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
               <folding>
                 <marker date="1423913522432" expanded="true" signature="59:154" placeholder="do ... end" />
                 <marker date="1423913522432" expanded="true" signature="164:525" placeholder="if ... end" />
@@ -77,10 +75,8 @@
       <file leaf-file-name="places_spec.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spec/features/places_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="6" selection-start="414" selection-end="414" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
-              <folding>
-                <marker date="1423914451000" expanded="true" signature="44:1240" placeholder="do ... end" />
-              </folding>
+            <state line="15" column="6" selection-start="414" selection-end="414" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="645">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -94,19 +90,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="beermapping_api_spec.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spec/lib/beermapping_api_spec.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="43" selection-start="7109" selection-end="7109" vertical-scroll-proportion="0.0" vertical-offset="97" max-vertical-offset="750">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="beermapping_api.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/beermapping_api.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="32" selection-start="197" selection-end="197" vertical-scroll-proportion="0.2173913" vertical-offset="0" max-vertical-offset="621">
+            <state line="29" column="3" selection-start="718" selection-end="718" vertical-scroll-proportion="0.6744186" vertical-offset="0" max-vertical-offset="645">
               <folding />
             </state>
           </provider>
@@ -115,7 +102,7 @@
       <file leaf-file-name="beer_page_spec.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spec/features/beer_page_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="84" selection-end="181" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
+            <state line="4" column="0" selection-start="84" selection-end="181" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="525">
               <folding />
             </state>
           </provider>
@@ -179,8 +166,8 @@
         <option value="$PROJECT_DIR$/spec/features/places_spec.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/spec/rails_helper.rb" />
-        <option value="$PROJECT_DIR$/spec/lib/beermapping_api_spec.rb" />
         <option value="$PROJECT_DIR$/config/environments/test.rb" />
+        <option value="$PROJECT_DIR$/spec/lib/beermapping_api_spec.rb" />
         <option value="$PROJECT_DIR$/lib/beermapping_api.rb" />
       </list>
     </option>
@@ -774,13 +761,13 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295129" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3538682" sideWeight="0.49947864" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -800,9 +787,9 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27528676" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295129" sideWeight="0.5922836" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -986,23 +973,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/user.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="32" selection-start="958" selection-end="958" vertical-scroll-proportion="0.8310078" vertical-offset="79" max-vertical-offset="1380">
-          <folding />
-        </state>
+        <state line="41" column="32" selection-start="958" selection-end="958" vertical-scroll-proportion="0.8310078" vertical-offset="79" max-vertical-offset="1380" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="61" selection-start="494" selection-end="494" vertical-scroll-proportion="0.0" vertical-offset="232" max-vertical-offset="840">
-          <folding />
-        </state>
+        <state line="16" column="61" selection-start="494" selection-end="494" vertical-scroll-proportion="0.0" vertical-offset="232" max-vertical-offset="840" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/models/user_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="0" selection-start="1076" selection-end="1176" vertical-scroll-proportion="0.0" vertical-offset="227" max-vertical-offset="2115">
-          <folding />
-        </state>
+        <state line="37" column="0" selection-start="1076" selection-end="1176" vertical-scroll-proportion="0.0" vertical-offset="227" max-vertical-offset="2115" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/features/breweries_page_spec.rb">
@@ -1012,23 +993,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/models/brewery_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="476" selection-end="476" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
-          <folding />
-        </state>
+        <state line="21" column="0" selection-start="476" selection-end="476" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/features/ratings_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="45" selection-end="291" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1185">
-          <folding />
-        </state>
+        <state line="3" column="0" selection-start="45" selection-end="291" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1185" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/features/users_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="3" selection-start="2456" selection-end="2456" vertical-scroll-proportion="0.0" vertical-offset="615" max-vertical-offset="1260">
-          <folding />
-        </state>
+        <state line="78" column="3" selection-start="2456" selection-end="2456" vertical-scroll-proportion="0.0" vertical-offset="615" max-vertical-offset="1260" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
@@ -1040,9 +1015,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="40" selection-start="411" selection-end="411" vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="600">
-          <folding />
-        </state>
+        <state line="12" column="40" selection-start="411" selection-end="411" vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="600" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/features/beer_page_spec.rb">
@@ -1056,7 +1029,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="3" selection-start="277" selection-end="277" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
           <folding>
-            <marker date="1423913224204" expanded="true" signature="22:277" placeholder=" ... end" />
             <marker date="1423913224204" expanded="true" signature="58:65" placeholder=" ... end" />
             <marker date="1423913224204" expanded="true" signature="79:273" placeholder=" ... end" />
           </folding>
@@ -1080,7 +1052,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="3" selection-start="291" selection-end="291" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
           <folding>
-            <marker date="1423911938236" expanded="true" signature="11:291" placeholder=" ... end" />
             <marker date="1423911938236" expanded="true" signature="212:286" placeholder=" ... end" />
           </folding>
         </state>
@@ -1089,17 +1060,23 @@
     <entry file="file://$PROJECT_DIR$/spec/features/places_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="6" selection-start="414" selection-end="414" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
-          <folding>
-            <marker date="1423914451000" expanded="true" signature="44:1240" placeholder="do ... end" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/rails_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="22" selection-start="42" selection-end="42" vertical-scroll-proportion="0.023255814" vertical-offset="0" max-vertical-offset="1350">
-          <folding />
-        </state>
+        <state line="1" column="22" selection-start="42" selection-end="42" vertical-scroll-proportion="0.023255814" vertical-offset="0" max-vertical-offset="1350" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/environments/test.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="36" selection-start="1621" selection-end="1621" vertical-scroll-proportion="0.8937198" vertical-offset="0" max-vertical-offset="675" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/lib/beermapping_api_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="51" selection-start="8153" selection-end="8153" vertical-scroll-proportion="0.21052632" vertical-offset="772" max-vertical-offset="1380" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
@@ -1109,23 +1086,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/environments/test.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="36" selection-start="1621" selection-end="1621" vertical-scroll-proportion="0.8937198" vertical-offset="0" max-vertical-offset="675">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/lib/beermapping_api_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="43" selection-start="7109" selection-end="7109" vertical-scroll-proportion="0.0" vertical-offset="97" max-vertical-offset="750">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/beermapping_api.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="32" selection-start="197" selection-end="197" vertical-scroll-proportion="0.2173913" vertical-offset="0" max-vertical-offset="621">
+        <state line="29" column="3" selection-start="718" selection-end="718" vertical-scroll-proportion="0.6744186" vertical-offset="0" max-vertical-offset="645">
           <folding />
         </state>
       </provider>
