@@ -22,6 +22,9 @@ Ratebeer::Application.routes.draw do
 
   get 'places', to: 'places#index'
 
+
+  resources :places, only:[:index, :show]
+
   post 'places', to: 'places#search'
 
   # The priority is based upon order of creation: first created -> highest priority.
