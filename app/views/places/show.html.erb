@@ -1,12 +1,22 @@
 
-<h1>Place</h1>
-<p><%=@place.name%></p>
+<h1><%= @place.name %></h1>
+<%= if @place.street
+      "#{@place.street}"
+end %>
 
+<%= unless @place.zip.nil?
+      "#{@place.zip}"
+end%>
+
+<%= unless @place.city.nil?
+      "#{@place.city}"
+    end%>
+</br>
 
 <iframe
 width="600"
 height="450"
 frameborder="0" style="border:0"
-src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAnIrOW_gXepYZRb-8OkJ9MFMHdyi5VldI
+src="https://www.google.com/maps/embed/v1/place?key=<%=MapApi.key%>
 &q=<%=@place.name%>">
 </iframe>
