@@ -27,10 +27,12 @@ class MembershipsController < ApplicationController
   def create
     @membership = Membership.new(membership_params)
     @membership.user_id = current_user.id
+    user = current_user
 
     respond_to do |format|
       if @membership.save
-        format.html { redirect_to @membership, notice: 'Membership was successfully created.' }
+        @beerClub = @membership.beer_club
+        format.html { redirect_to @membership.beer_club, notice: "#{user.username}, welcome to the club!" }
         format.json { render action: 'show', status: :created, location: @membership }
       else
         @beerClubs = BeerClub.all
@@ -57,9 +59,10 @@ class MembershipsController < ApplicationController
   # DELETE /memberships/1
   # DELETE /memberships/1.json
   def destroy
+    beerclub = @membership.beer_club
     @membership.destroy
     respond_to do |format|
-      format.html { redirect_to memberships_url }
+      format.html { redirect_to user_path(current_user), notice: "Membership in #{beerclub.name} ended." }
       format.json { head :no_content }
     end
   end
