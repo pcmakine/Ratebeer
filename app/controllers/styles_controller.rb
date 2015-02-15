@@ -10,6 +10,7 @@ class StylesController < ApplicationController
   # GET /styles/1
   # GET /styles/1.json
   def show
+    @beers = Beer.where("style_id = ?", params[:id]).to_a
   end
 
   # GET /styles/new
