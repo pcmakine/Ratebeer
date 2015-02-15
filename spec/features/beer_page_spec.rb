@@ -3,6 +3,7 @@ require 'rails_helper'
 describe "beer" do
   let!(:user) {FactoryGirl.create :user}
   before :each do
+    createStyles
     sign_in(username:"Pekka", password:"Foobar1")
     visit new_beer_path
   end
@@ -26,4 +27,12 @@ describe "beer" do
     expect(page).to have_content "New beer"
 
     end
-  end
+end
+
+def createStyles
+  Style.create name:"Lager"
+  Style.create name:"Pale Ale"
+  Style.create name:"Porter"
+  Style.create name:"Weizen"
+  Style.create name:"low alcohol"
+end

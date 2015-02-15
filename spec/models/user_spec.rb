@@ -83,15 +83,15 @@ end
     end
 
     it "is the style of the only rated beer if only one rating" do
-      beer = FactoryGirl.create(:beer, style:"IPA")
+      beer = FactoryGirl.create(:beer, style:Style.new(name:"IPA"))
       FactoryGirl.create(:rating, score:15, beer:beer, user:user)
-      expect(user.favorite_style).to eq("IPA")
+      expect(user.favorite_style.name).to eq("IPA")
 
     end
 
     it "is the style with the highest average rating" do
       createBeersAndRatings
-      expect(user.favorite_style).to eq("Porter")
+      expect(user.favorite_style.name).to eq("Porter")
     end
 
   end
@@ -107,14 +107,14 @@ describe "Favorite brewery" do
     expect(user.favorite_brewery).to eq(nil)
   end
 
-  it "is the style of the only rated beer if only one rating" do
-    beer = FactoryGirl.create(:beer, style:"IPA", brewery:FactoryGirl.create(:brewery, name:"BrewDog"))
+  it "is the brewery of the only rated beer if only one rating" do
+    beer = FactoryGirl.create(:beer, style:Style.new(name:"IPA"), brewery:FactoryGirl.create(:brewery, name:"BrewDog"))
     FactoryGirl.create(:rating, score:15, beer:beer, user:user)
     expect(user.favorite_brewery).to eq("BrewDog")
 
   end
 
-  it "is the style with the highest average rating" do
+  it "is the brewery with the highest average rating" do
     createBeersAndRatings
     expect(user.favorite_brewery).to eq("Malmgard")
   end
@@ -124,9 +124,9 @@ end
 end
 
 def createBeersAndRatings
-  beer1 = FactoryGirl.create(:beer, style:"Porter", brewery:FactoryGirl.create(:brewery, name:"Koff"))
-  beer2 = FactoryGirl.create(:beer, style:"Porter", brewery:FactoryGirl.create(:brewery, name:"Malmgard"))
-  beer3= FactoryGirl.create(:beer, style: "Weizen", brewery:FactoryGirl.create(:brewery, name:"Koff"))
+  beer1 = FactoryGirl.create(:beer, style:Style.new(name:"Porter"), brewery:FactoryGirl.create(:brewery, name:"Koff"))
+  beer2 = FactoryGirl.create(:beer, style:Style.new(name:"Porter"), brewery:FactoryGirl.create(:brewery, name:"Malmgard"))
+  beer3= FactoryGirl.create(:beer, style:Style.new(name:"Weizen"), brewery:FactoryGirl.create(:brewery, name:"Koff"))
 
   FactoryGirl.create(:rating, score:15, beer:beer1, user:user)
   FactoryGirl.create(:rating, score:30, beer:beer1, user:user)
