@@ -198,6 +198,11 @@
         151,
         123,
         null,
+        null,
+        1,
+        0,
+        0,
+        null,
         null
       ],
       "/home/wadror/ratebeer/ratebeer/app/controllers/memberships_controller.rb": [
@@ -691,12 +696,21 @@
         null,
         1,
         5,
+        5,
         null,
         null
       ],
       "/home/wadror/ratebeer/ratebeer/app/controllers/places_controller.rb": [
         1,
         1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
         null,
         null,
         null,
@@ -707,7 +721,14 @@
         1,
         null,
         2,
+        2,
         null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
         null,
         null
       ],
@@ -760,6 +781,6 @@
         null
       ]
     },
-    "timestamp": 1423918659
+    "timestamp": 1423985818
   }
 }
