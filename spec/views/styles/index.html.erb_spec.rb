@@ -17,6 +17,5 @@ RSpec.describe "styles/index", type: :view do
   it "renders a list of styles" do
     render
     assert_select "tr>td", :text => "Name".to_s, :count => 2
-    assert_select "tr>td", :text => "MyText".to_s, :count => 2
   end
 end
