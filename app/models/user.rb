@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
   private
 
   def getFavoriteStyle()
-    styles = Beer.all.group(:style).pluck("style")
+    styles = Style.all
     avgmap = {}
     styles.each{|s|
       avgmap[s] = getStylesAvg s
@@ -45,7 +45,7 @@ class User < ActiveRecord::Base
   end
 
   def getStylesAvg(style)
-    beersThisStyle = beers.where(style:style)
+    beersThisStyle = beers.where(style_id:style.id)
     avg = 0
     beersThisStyle.each{|b|
       stylesratings = b.ratings.where(user_id:id)

@@ -10,7 +10,6 @@ describe "beer" do
   it "beer is saved when the name field is not empty" do
     beername = 'testibisse'
     fill_in('beer_name', with:beername)
-
     expect{
       click_button "Create Beer"
     }.to change{Beer.count}.from(0).to(1)

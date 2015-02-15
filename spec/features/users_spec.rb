@@ -45,8 +45,10 @@ describe "User" do
     let!(:pekka) {User.find 1}
     let!(:koff) {Brewery.find 1}
     let!(:karjala) {Brewery.find 2}
-    let!(:beer1) {FactoryGirl.create :beer, style:"Lager", name:"iso 3", brewery:koff}
-    let!(:beer2) {FactoryGirl.create :beer, style:"Weizen", name:"Karhu", brewery:karjala}
+    let!(:lager) {FactoryGirl.create :style}
+    let!(:weizen) {Style.new(name:"Weizen")}
+    let!(:beer1) {FactoryGirl.create :beer, style:lager, name:"iso 3", brewery:koff}
+    let!(:beer2) {FactoryGirl.create :beer, style:weizen, name:"Karhu", brewery:karjala}
 
     it "not shown if no ratings" do
 
