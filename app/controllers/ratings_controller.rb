@@ -1,6 +1,19 @@
 class RatingsController < ApplicationController
   def index
     @ratings = Rating.all
+    @recent_ratings = Rating.order(created_at: :desc).first 5
+
+    @brewery_ratings = Brewery.top(3)
+    @top_breweries = @brewery_ratings.keys
+
+    @beer_ratings = Beer.top(3)
+    @top_beers = @beer_ratings.keys
+
+    @style_ratings = Style.top(3)
+    @top_styles = @style_ratings.keys
+
+    @top_users = User.top(3)
+
   end
 
   def new

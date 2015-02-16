@@ -6,6 +6,9 @@ class Brewery < ActiveRecord::Base
       only_integer: true }
   validate :cannot_be_found_in_the_future
 
+  scope :active, -> {where active:true}
+  scope :retired, -> {where active:[nil, false]}
+
 
   has_many :beers, dependent: :destroy
   has_many :ratings, through: :beers
@@ -14,6 +17,14 @@ class Brewery < ActiveRecord::Base
     if year > Time.now.year
       errors.add(:year, "cannot be in the future!")
     end
+  end
+
+  def self.top(n)
+    sql = "select avg(r.score) as avg, b.brewery_id from ratings r join beers b on r.beer_id = b.id group by b.brewery_id order by avg desc limit #{n}"
+    top = ActiveRecord::Base.connection.execute(sql)
+    top_breweries = {}
+    top.each{|b| top_breweries[Brewery.find(b["brewery_id"])] = b["avg"]}
+    top_breweries
   end
 
   def to_s

@@ -38,15 +38,7 @@ describe "Rating" do
       it("ratings and the number of ratings are shown at the ratings page") do
       visit ratings_path
 
-      @firstRatings.each do |score|
-          expect(page).to have_content "anonymous #{score} Pekka"
-      end
-
-      @secondRatings.each do |score|
-        expect(page).to have_content "anonymous #{score} Arto"
-      end
-
-      expect(page).to have_content "Number of ratings: #{@firstRatings.length + @secondRatings.length}"
+      expect(page).to have_content "Total number of ratings: #{@firstRatings.length + @secondRatings.length}"
 
       end
 

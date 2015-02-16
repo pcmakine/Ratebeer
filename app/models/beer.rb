@@ -9,6 +9,13 @@ class Beer < ActiveRecord::Base
   has_many :ratings, dependent: :destroy
   has_many :raters, -> { uniq }, through: :ratings, source: :user
 
+  def self.top(n)
+    top = Beer.all.sort_by{ |b| -(b.average_rating||0 ) }.first n
+    top_beers = {}
+    top.each{|b| top_beers[b] = b.average_rating}
+    top_beers
+  end
+
   def to_s
     "#{name} (#{brewery.name})"
   end

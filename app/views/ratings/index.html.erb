@@ -1,11 +1,55 @@
-<h2>List of ratings</h2>
-<p>Number of ratings: <%= @ratings.count %> </p>
+<h1>Ratings statistics</h1>
+<p>Total number of ratings: <%= @ratings.count %> </p>
 
+<div class="row">
+  <div class="col-md-4">
+<h3>Best beers</h3>
+<%= render 'list', top: @top_beers, ratings: @beer_ratings, title: "Beer" %>
+
+  </div>
+  <div class="col-md-4">
+<h3>Best breweries</h3>
+<%= render 'list', top: @top_breweries, ratings: @brewery_ratings , title: "Brewery"  %>
+  </div>
+
+<div class="col-md-4">
+    <h3>Best styles</h3>
+<%= render 'list', top: @top_styles, ratings: @style_ratings, title: "Style"  %>
+</div>
+</div>
+
+<h3>Most active users</h3>
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>Username</th>
+    <th>Favorite beer</th>
+    <th>Preferred style</th>
+    <th>Favorite brewery</th>
+    <th>Ratings</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @top_users.each do |b| %>
+      <tr>
+        <td class="vert-align"><%= link_to b.username, b %></td>
+        <td class="vert-align"><%= link_to b.favorite_beer, b.favorite_beer %></td>
+        <td class="vert-align"><%= link_to b.favorite_style, b.favorite_style %></td>
+        <td class="vert-align"><%= link_to b.favorite_brewery, b.favorite_brewery %></td>
+        <td class="vert-align"><%= b.ratings.count %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<h3>Recent ratings</h3>
 <ul>
-  <% @ratings.each do |rating| %>
+  <% @recent_ratings.each do |rating| %>
     <li> <%= rating %>  <%= rating.user.username %> </li>
    <% end %>
 </ul>
+
 
 <% unless current_user.nil? %>
 <%= link_to 'Create new rating', new_rating_path, class:"btn btn-success" %>

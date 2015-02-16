@@ -14,6 +14,10 @@ class User < ActiveRecord::Base
   has_many :memberships
   has_many :beer_clubs, through: :memberships
 
+  def self.top(n)
+    User.all.sort_by{|u| u.ratings.count}.reverse.first n
+  end
+
   def favorite_beer
     return nil if ratings.empty?
     ratings.order(score: :desc).limit(1).first.beer
