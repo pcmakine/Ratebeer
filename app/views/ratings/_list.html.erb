@@ -10,7 +10,7 @@
   <% top.each do |b| %>
       <tr>
         <td class="vert-align"><%= link_to b.name, b %></td>
-        <td class="vert-align"><%= ratings[b] %></td>
+        <td class="vert-align"><%= round(ratings[b]) %></td>
       </tr>
   <% end %>
   </tbody>

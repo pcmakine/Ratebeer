@@ -7,7 +7,7 @@
 <p>
 
 <% unless @user.ratings.empty? %>
-    has made <%= @user.ratings.length.to_s(10) << " rating".pluralize(@user.ratings.length) %>. Average <%= @user.average_rating %>
+    has made <%= @user.ratings.length.to_s(10) << " rating".pluralize(@user.ratings.length) %>. Average <%= round(@user.average_rating) %>
     <br>
       <% unless @user.favorite_style.nil?%>
           Favorite style: <%= @user.favorite_style %> <br>
@@ -18,7 +18,7 @@
       <% end %>
     <h3>Ratings</h3>
     <ul class="list-group">
-      <% @user.ratings.each do |rating| %>
+       <% @user.ratings.each do |rating| %>
           <li class="list-group-item"> <%= rating %>
             <% if @user == current_user %>
                 <%= link_to 'delete', rating_path(rating.id), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-sm btn-danger"%>

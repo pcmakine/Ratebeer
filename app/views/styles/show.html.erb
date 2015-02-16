@@ -5,6 +5,7 @@
   <%= @style.description %>
 </p>
 
+
 Beers of this style:
 
 <% unless @beers.nil? or @beers.empty? %>
@@ -15,5 +16,4 @@ Beers of this style:
     <% end %>
 <% end %>
 
-<%= link_to 'Edit', edit_style_path(@style) %> |
-<%= link_to 'Back', styles_path %>
+<%= edit_and_destroy_buttons(@style) %>
