@@ -1,6 +1,6 @@
 <h1>Listing beers</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Name</th>
@@ -14,11 +14,11 @@
   <tbody>
     <% @beers.each do |beer| %>
       <tr>
-        <td><%= link_to beer.name, beer %></td>
-        <td><%= beer.style.name %></td>
-        <td><%= link_to beer.brewery.name, beer.brewery %></td>
-        <td><%= link_to 'Edit', edit_beer_path(beer) %></td>
-        <td><%= link_to 'delete', beer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="vert-align"><%= link_to beer.name, beer %></td>
+        <td class="vert-align"><%= beer.style.name %></td>
+        <td class="vert-align"><%= link_to beer.brewery.name, beer.brewery %></td>
+        <td class="vert-align"><%= link_to 'Edit', edit_beer_path(beer) %></td>
+        <td class="vert-align"><%= link_to 'delete', beer, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -29,5 +29,5 @@
 
 
 <% if not current_user.nil? %>
-<%= link_to 'New Beer', new_beer_path %>
+<%= link_to 'New Beer', new_beer_path, class:"btn btn-success" %>
 <% end %>

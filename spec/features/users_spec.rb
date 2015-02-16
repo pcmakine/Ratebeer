@@ -66,13 +66,13 @@ describe "User" do
 
       end
       it "correct brewery is shown" do
-        click_on 'Pekka'
+        visit user_path(pekka)
         expect(page).to have_content 'Pekka'
         expect(page).to have_content 'Favorite brewery: Karjala'
       end
 
       it "and correct style is shown" do
-        click_on 'Pekka'
+        visit user_path(pekka)
         expect(page).to have_content 'Pekka'
         expect(page).to have_content 'Favorite style: Weizen'
       end

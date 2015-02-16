@@ -1,7 +1,7 @@
-<h1>Listing breweries</h1>
+<h1>Breweries</h1>
 <p>Number of breweries: <%= @breweries.count %> </p>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Name</th>
@@ -14,17 +14,13 @@
   <tbody>
     <% @breweries.each do |brewery| %>
       <tr>
-        <td><%= link_to brewery.name, brewery %></td>
-        <td><%= brewery.year %></td>
-        <td><%= link_to 'Edit', edit_brewery_path(brewery) %></td>
-        <td><%= link_to 'delete', brewery, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="vert-align"><%= link_to brewery.name, brewery %></td>
+        <td class="vert-align"><%= brewery.year %></td>
+        <td class="vert-align"><%= link_to 'Edit', edit_brewery_path(brewery), class:"btn btn-primary" %></td>
+        <td class="vert-align"><%= link_to 'delete', brewery, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger"  %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<p><%=link_to "List of beers", beers_path %></p>
-
-<br>
-
-<%= link_to 'New Brewery', new_brewery_path if current_user %>
+<%= link_to 'New Brewery', new_brewery_path, class:"btn btn-success"  if current_user %>

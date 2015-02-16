@@ -2,11 +2,11 @@
 
 <%= form_tag places_path do %>
     city <%= text_field_tag :city, params[:city] %>
-    <%= submit_tag "Search" %>
+    <%= submit_tag "Search", class:"btn btn-sm btn-primary" %>
 <% end %>
 
 <% if @places %>
-    <table>
+    <table class="table table-hover">
       <thead>
         <td>Name</td>
         <% Place.rendered_fields.each do |f| %>
