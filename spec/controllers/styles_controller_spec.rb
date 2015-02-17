@@ -52,12 +52,14 @@ RSpec.describe StylesController, type: :controller do
     end
   end
 
+=begin
   describe "GET #new" do
     it "assigns a new style as @style" do
       get :new, {}, valid_session
       expect(assigns(:style)).to be_a_new(Style)
     end
   end
+=end
 
   describe "GET #edit" do
     it "assigns the requested style as @style" do
