@@ -542,8 +542,12 @@
         12,
         12,
         11,
+        0,
+        null,
+        11,
         11,
         null,
+        null,
         1,
         null,
         null,
@@ -553,6 +557,9 @@
         0,
         null,
         0,
+        null,
+        null,
+        null,
         null,
         null
       ],
@@ -565,6 +572,7 @@
         null
       ],
       "/home/wadror/ratebeer/ratebeer/app/controllers/users_controller.rb": [
+        1,
         1,
         1,
         1,
@@ -973,6 +981,6 @@
         null
       ]
     },
-    "timestamp": 1424195527
+    "timestamp": 1424200455
   }
 }

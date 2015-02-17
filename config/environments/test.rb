@@ -36,4 +36,6 @@ Ratebeer::Application.configure do
 
   # Write cache in memory
   config.cache_store = :memory_store
+
+  config.filter_parameters << :password
 end

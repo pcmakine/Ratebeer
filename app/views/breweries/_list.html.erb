@@ -10,12 +10,12 @@
 
     <tbody>
         <% breweries.each do |brewery| %>
-        <tr>
-            <td class="vert-align"><%= link_to brewery.name, brewery %></td>
-            <td class="vert-align"><%= brewery.year %></td>
-            <td class="vert-align"><%= link_to 'Edit', edit_brewery_path(brewery), class:"btn btn-primary" %></td>
-            <td class="vert-align"><%= link_to 'delete', brewery, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger"  %></td>
-        </tr>
-    <% end %>
+            <tr>
+                <td class="vert-align"><%= link_to brewery.name, brewery %></td>
+                <td class="vert-align"><%= brewery.year %></td>
+                <td class="vert-align"><%= link_to 'Edit', edit_brewery_path(brewery), class:"btn btn-primary" %></td>
+                <td class="vert-align"><%= link_to 'delete', brewery, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger"  %></td>
+            </tr>
+        <% end %>
     </tbody>
 </table>
