@@ -65,6 +65,8 @@
       "/home/wadror/ratebeer/ratebeer/app/controllers/styles_controller.rb": [
         1,
         1,
+        1,
+        1,
         null,
         null,
         null,
@@ -80,7 +82,7 @@
         null,
         null,
         1,
-        1,
+        0,
         null,
         null,
         null,
@@ -149,12 +151,19 @@
         1,
         null,
         1,
-        4,
+        5,
         null,
         null,
         1,
-        117,
-        88,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        135,
+        105,
         null,
         null,
         1,
@@ -244,6 +253,7 @@
         null
       ],
       "/home/wadror/ratebeer/ratebeer/app/controllers/beer_clubs_controller.rb": [
+        1,
         1,
         1,
         1,
@@ -624,6 +634,15 @@
         null,
         null,
         1,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        null,
+        null,
+        1,
         null,
         1,
         18,
@@ -652,6 +671,7 @@
         null
       ],
       "/home/wadror/ratebeer/ratebeer/app/controllers/beers_controller.rb": [
+        1,
         1,
         1,
         1,
@@ -738,6 +758,7 @@
         null
       ],
       "/home/wadror/ratebeer/ratebeer/app/controllers/breweries_controller.rb": [
+        1,
         1,
         1,
         1,
@@ -952,6 +973,6 @@
         null
       ]
     },
-    "timestamp": 1424106313
+    "timestamp": 1424195359
   }
 }

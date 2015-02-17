@@ -5,7 +5,9 @@ Ratebeer::Application.routes.draw do
 
   resources :beer_clubs
 
-  resources :users
+  resources :users do
+    post 'toggle_frozen', on: :member
+  end
 
   resources :beers
 
@@ -25,7 +27,6 @@ Ratebeer::Application.routes.draw do
   delete 'signout', to: 'sessions#destroy'
 
   get 'places', to: 'places#index'
-
 
   resources :places, only:[:index, :show]
 

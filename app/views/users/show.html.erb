@@ -1,8 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <h2><%= @user.username %></h2>
+  <h2><%= @user.username %>
+
+<% if @user.account_frozen %>
+    <span class="label label-danger">Account frozen</span>
+    <% end %></h2>
+</h2>
 </p>
+
 
 <p>
 
@@ -49,3 +55,13 @@
 <%= link_to 'Edit', edit_user_path(@user), class:"btn btn-primary" %> |
 <%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
 <% end %>
+
+<p>
+<% if (current_user.admin) %>
+  <% if @user.account_frozen %>
+    <%= link_to "Unfreeze account", toggle_frozen_user_path(@user.id), method: :post, class: "btn btn-danger" %>
+  <% else %>
+     <%= link_to "Freeze account", toggle_frozen_user_path(@user.id), method: :post, class: "btn btn-danger" %>
+  <% end %>
+<% end %>
+</p>

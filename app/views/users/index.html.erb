@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Username</th>
+      <th>Frozen</th>
     </tr>
   </thead>
 
@@ -11,6 +12,10 @@
     <% @users.each do |user| %>
       <tr>
         <td><%=link_to user.username, user%></td>
+        <td><% if user.account_frozen %>
+              <span class="label label-danger">Account frozen</span>
+
+          <% end %></td>
       </tr>
     <% end %>
   </tbody>

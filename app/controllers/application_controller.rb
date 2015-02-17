@@ -10,6 +10,13 @@ class ApplicationController < ActionController::Base
     redirect_to signin_path, notice:'you should be signed in' if current_user.nil?
   end
 
+  def ensure_user_is_admin
+    ensure_that_signed_in
+    if (current_user.admin == false or current_user.admin.nil?)
+      redirect_to :back, notice:'only admins are allowed to delete'
+    end
+  end
+
   def current_user
     return nil if session[:user_id].nil?
     User.find(session[:user_id])
