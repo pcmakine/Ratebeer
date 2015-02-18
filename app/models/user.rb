@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   def self.top(n)
     User.all.sort_by{|u| u.ratings.count}.reverse.first n
   end
-
+=begin
   def favorite_beer
     return nil if ratings.empty?
     ratings.order(score: :desc).limit(1).first.beer
@@ -32,12 +32,51 @@ class User < ActiveRecord::Base
     return nil if ratings.empty?
     getFavoriteBrewery
   end
+=end
+
+  def favorite_brewery
+    favorite :brewery
+  end
+
+  def favorite_style
+    favorite :style
+  end
+
+  def favorite_beer
+    return nil if ratings.empty?
+    ratings.order(score: :desc).limit(1).first.beer
+  end
 
   def to_s
     username
   end
 
+  def favorite(category)
+    return nil if ratings.empty?
+
+    category_ratings = rated(category).inject([]) do |set, item|
+      set << {
+          item: item,
+          rating: rating_of(category, item)
+      }
+    end
+    category_ratings.sort_by{ |item| item[:rating]}.last[:item]
+  end
+
+  def rating_of(category, item)
+    ratings_of_item = ratings.select do |r|
+      r.beer.send(category) == item
+    end
+    ratings_of_item.map(&:score).sum / ratings_of_item.count
+  end
+
+  def rated(category)
+    ratings.map{ |r| r.beer.send(category)}.uniq
+  end
+
   private
+
+=begin
 
   def getFavoriteStyle()
     styles = Style.all
@@ -84,7 +123,6 @@ class User < ActiveRecord::Base
     }
     avg
   end
-
-
+=end
 
 end
