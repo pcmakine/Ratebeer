@@ -110,13 +110,13 @@ describe "Favorite brewery" do
   it "is the brewery of the only rated beer if only one rating" do
     beer = FactoryGirl.create(:beer, style:Style.new(name:"IPA"), brewery:FactoryGirl.create(:brewery, name:"BrewDog"))
     FactoryGirl.create(:rating, score:15, beer:beer, user:user)
-    expect(user.favorite_brewery).to eq("BrewDog")
+    expect(user.favorite_brewery.name).to eq("BrewDog")
 
   end
 
   it "is the brewery with the highest average rating" do
     createBeersAndRatings
-    expect(user.favorite_brewery).to eq("Malmgard")
+    expect(user.favorite_brewery.name).to eq("Malmgard")
   end
 
 end
