@@ -34,6 +34,9 @@ Ratebeer::Application.routes.draw do
 
   get 'beerlist', to: 'beers#list'
 
+
+  get 'brewerylist', to: 'breweries#list'
+
   get 'ngbeerlist', to: 'beers#nglist'
 
   # The priority is based upon order of creation: first created -> highest priority.
