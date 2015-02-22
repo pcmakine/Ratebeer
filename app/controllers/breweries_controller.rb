@@ -6,8 +6,24 @@ class BreweriesController < ApplicationController
   # GET /breweries
   # GET /breweries.json
   def index
-    @active_breweries = Brewery.active
-    @retired_breweries = Brewery.retired
+    order = params[:order] || 'name'
+
+    if getPreviousOrder == order
+      orderBy = switchOrderBy
+    else
+      orderBy = resetOrderBy
+    end
+
+    @active_breweries = case order
+                          when 'name' then @active_breweries = Brewery.active.order("name #{orderBy}")
+                          when 'year' then @active_breweries = Brewery.active.order("year #{orderBy}")
+                        end
+
+    @retired_breweries = case order
+                           when 'name' then @retired_breweries = Brewery.retired.order("name #{orderBy}")
+                           when 'year' then @retired_breweries = Brewery.retired.order("year #{orderBy}")
+                         end
+    setPreviousOrder order
 
   end
 

@@ -26,4 +26,37 @@ class ApplicationController < ActionController::Base
     return nil if session[:cityname].nil?
     session[:cityname]
   end
+
+  def getOrderBy
+    session[:orderBy]
+  end
+
+  def resetOrderBy
+    session[:orderBy] = 'asc'
+    'asc'
+  end
+
+  def switchOrderBy
+    if getPreviousOrder.nil?
+      session[:orderBy] = "asc"
+      "asc"
+    else
+
+      if getOrderBy == "asc"
+        session[:orderBy] = "desc"
+        "desc"
+      else
+        session[:orderBy] = "asc"
+        "asc"
+      end
+    end
+  end
+
+  def getPreviousOrder
+    session[:order]
+  end
+
+  def setPreviousOrder(order)
+    session[:order] = order
+  end
 end

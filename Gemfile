@@ -87,3 +87,5 @@ gem 'bootstrap-sass'
 group :development do
   gem 'rails_layout'
 end
+
+gem 'jquery-turbolinks'
