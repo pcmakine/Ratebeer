@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<% cache @beer do %>
 <p>
   <strong>Name:</strong>
   <%= @beer.name %>
@@ -19,6 +20,8 @@
     <p>beer has not yet been rated!</p>
 <% else %>
     <p>has been rated <%= @beer.ratings.count %> times, average score <%= round(@beer.average_rating) %></p>
+<% end %>
+
 <% end %>
 
 <% if current_user %>

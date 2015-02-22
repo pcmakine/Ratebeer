@@ -3,6 +3,15 @@ class BreweriesController < ApplicationController
   before_action :ensure_user_is_admin, only: [:destroy]
   before_action :set_brewery, only: [:show, :edit, :update, :destroy]
 
+  before_action :skip_if_cached, only:[:index]
+
+  def skip_if_cached
+    @order = params[:order] || 'name'
+    return render :index if fragment_exist?("activebrewerylist-#{@order}") and
+                                                fragment_exist?("retiredbrewerylist-#{@order}")
+  end
+
+
   def list
 
   end
@@ -10,7 +19,6 @@ class BreweriesController < ApplicationController
   # GET /breweries
   # GET /breweries.json
   def index
-    @breweries = Brewery.all
     order = params[:order] || 'name'
 
     if getPreviousOrder == order
@@ -49,6 +57,7 @@ class BreweriesController < ApplicationController
   # POST /breweries
   # POST /breweries.json
   def create
+    expire_brewery_fragment
     @brewery = Brewery.new(brewery_params)
 
     respond_to do |format|
@@ -65,6 +74,7 @@ class BreweriesController < ApplicationController
   # PATCH/PUT /breweries/1
   # PATCH/PUT /breweries/1.json
   def update
+    expire_brewery_fragment
     respond_to do |format|
       if @brewery.update(brewery_params)
         format.html { redirect_to @brewery, notice: 'Brewery was successfully updated.' }
@@ -79,6 +89,7 @@ class BreweriesController < ApplicationController
   # DELETE /breweries/1
   # DELETE /breweries/1.json
   def destroy
+    expire_brewery_fragment
     @brewery.destroy
     respond_to do |format|
       format.html { redirect_to breweries_url }
@@ -87,6 +98,7 @@ class BreweriesController < ApplicationController
   end
 
   def toggle_activity
+    expire_brewery_fragment
     brewery = Brewery.find(params[:id])
     brewery.update_attribute :active, (not brewery.active)
 
@@ -94,6 +106,12 @@ class BreweriesController < ApplicationController
 
     redirect_to :back, notice:"brewery activity status changed to #{new_status}"
   end
+
+  def expire_brewery_fragment
+    ["activebrewerylist-name", "activebrewerylist-brewery", "activebrewerylist-style",
+     "retiredbrewerylist-name", "retiredbrewerylist-brewery", "retiredbrewerylist-style"].each{|f| expire_fragment(f)}
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

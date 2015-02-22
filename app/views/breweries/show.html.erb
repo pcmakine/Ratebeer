@@ -1,4 +1,4 @@
-
+<% cache @brewery do %>
 <h2><%= @brewery.name %>
     <% if not @brewery.active %>
       <span class="label label-info">retired</span></h2>
@@ -19,6 +19,8 @@
        <%= link_to beer.name, beer%> |
     <% end %>
 </p>
+
+<% end %>
 
 <% if(!@brewery.ratings.empty?) %>
     <p>Has <%= @brewery.ratings.length.to_s(10) << " rating".pluralize(@brewery.ratings.length) %>, average: <%= round(@brewery.average_rating) %> </p>

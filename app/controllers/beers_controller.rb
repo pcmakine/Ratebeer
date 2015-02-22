@@ -3,6 +3,12 @@ class BeersController < ApplicationController
   before_action :ensure_user_is_admin, only: [:destroy]
   before_action :set_beer, only: [:show, :edit, :update, :destroy]
   before_action :set_breweries_and_styles_for_template, only: [:new, :edit]
+  before_action :skip_if_cached, only:[:index]
+
+  def skip_if_cached
+    @order = params[:order] || 'name'
+    return render :index if fragment_exist?("beerlist-#{@order}")
+  end
 
 
   def list
@@ -47,6 +53,7 @@ class BeersController < ApplicationController
   # POST /beers
   # POST /beers.json
   def create
+    expire_beer_fragment
     @beer = Beer.new(beer_params)
     respond_to do |format|
       if @beer.save
@@ -63,6 +70,7 @@ class BeersController < ApplicationController
   # PATCH/PUT /beers/1
   # PATCH/PUT /beers/1.json
   def update
+    expire_beer_fragment
     respond_to do |format|
       if @beer.update(beer_params)
         format.html { redirect_to @beer, notice: 'Beer was successfully updated.' }
@@ -72,16 +80,22 @@ class BeersController < ApplicationController
         format.json { render json: @beer.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # DELETE /beers/1
   # DELETE /beers/1.json
   def destroy
+    expire_beer_fragment
     @beer.destroy
     respond_to do |format|
       format.html { redirect_to beers_url}
       format.json { head :no_content }
     end
+  end
+
+  def expire_beer_fragment
+    ["beerlist-name", "beerlist-brewery", "beerlist-style"].each{|f| expire_fragment(f)}
   end
 
   private
