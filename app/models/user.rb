@@ -16,13 +16,15 @@ class User < ActiveRecord::Base
   has_many :beer_clubs, through: :memberships
 
   def validPassword
+    byebug
     if user_source == 'github'
       true
-    elsif :password.length < 4
-      errors.add(:password, "too short!")
+    elsif password.length < 4
+      errors.add(password, "too short!")
       false
-    elsif not /\A(.*\d.*[A-Z].*)|(.*[A-Z].*\d.*)\z/.match(:password)
-      errors.add(:password, "must include a capital letter and a digit")
+    elsif not /\A(.*\d.*[A-Z].*)|(.*[A-Z].*\d.*)\z/.match(password)
+      errors.add(password, "must include a capital letter and a digit")
+      false
     end
   end
 
