@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
 
   validates :username, uniqueness: true,
                         length: { in: 3..30 }
-  #validates :password, length: { minimum: 4}
+  validates :password, length: { minimum: 4}
  # validates :password, format: { with: /\A(.*\d.*[A-Z].*)|(.*[A-Z].*\d.*)\z/,
   #    message: "must include a capital letter and a digit"}
   validate :validPassword
@@ -17,13 +17,12 @@ class User < ActiveRecord::Base
 
   def validPassword
     if user_source == 'github'
-      true
-    elsif password.length < 4
-      errors.add(password, "too short!")
-      false
+      return true
+    elsif password.nil?
+      return false
     elsif not /\A(.*\d.*[A-Z].*)|(.*[A-Z].*\d.*)\z/.match(password)
       errors.add(password, "must include a capital letter and a digit")
-      false
+      return false
     end
   end
 
