@@ -16,7 +16,6 @@ class User < ActiveRecord::Base
   has_many :beer_clubs, through: :memberships
 
   def validPassword
-    byebug
     if user_source == 'github'
       true
     elsif password.length < 4
