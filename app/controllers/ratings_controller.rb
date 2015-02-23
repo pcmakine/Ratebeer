@@ -1,18 +1,18 @@
 class RatingsController < ApplicationController
+  include BackgroundWorker
+
+  before_action :start_worker
+
+  #the ratings are in cache. The cache is written by a background worker thread
+  #The start method of the background worker is called before all the actions, and the
+  #worker is started if it is not running already
   def index
-    @ratings = Rating.all
-    @recent_ratings = Rating.order(created_at: :desc).first 5
-
-    @brewery_ratings = Brewery.top(3)
-    @top_breweries = @brewery_ratings.keys
-
-    @beer_ratings = Beer.top(3)
-    @top_beers = @beer_ratings.keys
-
-    @style_ratings = Style.top(3)
-    @top_styles = @style_ratings.keys
-
-    @top_users = User.top(3)
+    @ratings = Rails.cache.read "ratings"
+    @recent_ratings = Rails.cache.read "recent_ratings"
+    @brewery_ratings = Rails.cache.read "brewery top 3"
+    @beer_ratings = Rails.cache.read "beer top 3"
+    @style_ratings = Rails.cache.read "style top 3"
+    @top_users = Rails.cache.read "user top 3"
 
   end
 

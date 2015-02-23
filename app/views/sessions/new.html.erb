@@ -1,7 +1,14 @@
 <h1>Sign in</h1>
 <p id="notice"><%= notice %></p>
-<%= form_tag session_path do %>
-    User Name: <%= text_field_tag :username, params[:username] %>
-    <p>Password: <%= password_field_tag :password, params[:password] %></p>
-    <%= submit_tag "Log in" %>
+
+<%= form_tag session_path, role:'form' do%>
+  <div class="form-group">
+        User Name: <%= text_field_tag :username, params[:username], class: 'form-control' %>
+        <p>Password: <%= password_field_tag :password, params[:password], class:'form-control' %></p>
+        <%= submit_tag "Log in", class:'btn btn-primary' %>
+ </div>
 <% end %>
+
+ <div>
+<%= link_to 'Sign in with github', '/auth/github', class:'btn btn-primary'%>
+ </div>

@@ -2,7 +2,6 @@ class BeermappingApi
   def self.places_in(city)
     city = city.downcase
     Rails.cache.fetch(city, expires_in: 1.week) { fetch_places_in(city)}
-
   end
 
   private

@@ -93,3 +93,7 @@ end
 gem 'jquery-turbolinks'
 
 gem 'rack-mini-profiler'
+
+gem 'puma'
+
+gem 'omniauth-github'

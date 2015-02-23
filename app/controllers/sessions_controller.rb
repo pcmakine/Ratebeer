@@ -4,6 +4,19 @@ class SessionsController < ApplicationController
     # renderöi kirjautumissivun
   end
 
+  def create_oauth
+    user = User.find_by username: env["omniauth.auth"].info["nickname"]
+
+    if user.nil?
+      pwd = SecureRandom.uuid
+      user = User.create!(username:env["omniauth.auth"].info["nickname"], user_source:'github',
+      password:pwd, password_confirmation:pwd)
+    end
+
+    session[:user_id] = user.id
+    redirect_to user_path(user), notice: "Welcome!"
+  end
+
   def create
     #haetaan usernamea vastaava käyttäjä tietokannasta
     user = User.find_by username: params[:username]
