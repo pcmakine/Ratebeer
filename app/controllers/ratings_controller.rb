@@ -7,12 +7,40 @@ class RatingsController < ApplicationController
   #The start method of the background worker is called before all the actions, and the
   #worker is started if it is not running already
   def index
-    @ratings = Rails.cache.read "ratings"
-    @recent_ratings = Rails.cache.read "recent_ratings"
-    @brewery_ratings = Rails.cache.read "brewery top 3"
-    @beer_ratings = Rails.cache.read "beer top 3"
-    @style_ratings = Rails.cache.read "style top 3"
-    @top_users = Rails.cache.read "user top 3"
+    if !Rails.cache.read("ratings").nil?
+      @ratings = Rails.cache.read "ratings"
+    else
+      @ratings = Rating.order(created_at: :desc)
+    end
+
+    if !Rails.cache.read("recent_ratings").nil?
+      @recent_ratings = Rails.cache.read "recent_ratings"
+    else
+      @recent_ratings = Rating.order(created_at: :desc).first(5)
+    end
+
+    if !Rails.cache.read("brewery top 3").nil?
+      @brewery_ratings = Rails.cache.read "brewery top 3"
+    else
+      @brewery_ratings  = Brewery.top(3)
+    end
+
+    if !Rails.cache.read("beer top 3").nil?
+      @beer_ratings = Rails.cache.read "beer top 3"
+    else
+      @beer_ratings  = Beer.top(3)
+    end
+    if !Rails.cache.read("style top 3").nil?
+      @style_ratings = Rails.cache.read "style top 3"
+    else
+      @style_ratings  = Style.top(3)
+    end
+
+    if !Rails.cache.read("user top 3").nil?
+      @top_users= Rails.cache.read "user top 3"
+    else
+      @top_users  = User.top(3)
+    end
 
   end
 
